@@ -95,7 +95,7 @@ router.get('/:id/comments', (req, res) => {
 
 });
 
-router.delete('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     const post = req.body;
     const{ id } = req.params;
     if (!req.body.title || !req.body.contents) {
@@ -116,7 +116,7 @@ router.delete('/:id', (req, res) => {
     }
 });
 
-router.put('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     const { id } = req.params;
     db.remove(id)
         .then(post => {
